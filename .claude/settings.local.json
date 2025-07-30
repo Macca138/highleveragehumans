@@ -11,7 +11,14 @@
       "Bash(firebase hosting:sites:list:*)",
       "WebFetch(domain:dnschecker.org)",
       "Bash(git init:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git branch:*)",
+      "Bash(winget install:*)",
+      "Bash(git --version)",
+      "Bash(git config:*)",
+      "Bash(git remote add:*)"
     ],
     "deny": []
   }
