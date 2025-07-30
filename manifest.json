@@ -1,0 +1,186 @@
+{
+  "name": "High Leverage Humans - Premium Trading & Startup Platform",
+  "short_name": "HighLeverageHumans",
+  "description": "Master high-leverage trading strategies, 100x opportunities, and startup scaling. Premium domain showcasing elite financial and business optimization.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#1a1a1a",
+  "background_color": "#ffffff",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  
+  "categories": [
+    "finance",
+    "business",
+    "education",
+    "productivity",
+    "lifestyle"
+  ],
+  
+  "screenshots": [
+    {
+      "src": "/assets/images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Desktop view of High Leverage Humans platform"
+    },
+    {
+      "src": "/assets/images/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Mobile view of trading dashboard"
+    }
+  ],
+  
+  "icons": [
+    {
+      "src": "/assets/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/assets/icons/icon-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  
+  "shortcuts": [
+    {
+      "name": "Trading Dashboard",
+      "short_name": "Trading",
+      "description": "Access high-leverage trading strategies and 100x opportunities",
+      "url": "/trading/",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-trading.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Startup Resources",
+      "short_name": "Startups",
+      "description": "Scaling strategies and funding resources for startups",
+      "url": "/startups/",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-startup.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Leverage Tools",
+      "short_name": "Tools",
+      "description": "Business and personal leverage optimization tools",
+      "url": "/tools/",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-tools.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Community",
+      "short_name": "Community",
+      "description": "Connect with other high-leverage professionals",
+      "url": "/community/",
+      "icons": [
+        {
+          "src": "/assets/icons/shortcut-community.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  
+  "related_applications": [
+    {
+      "platform": "web",
+      "url": "https://highleveragehumans.com/"
+    }
+  ],
+  
+  "prefer_related_applications": false,
+  
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  
+  "launch_handler": {
+    "client_mode": "focus-existing"
+  },
+  
+  "file_handlers": [
+    {
+      "action": "/tools/calculator/",
+      "accept": {
+        "text/csv": [".csv"],
+        "application/json": [".json"]
+      }
+    }
+  ],
+  
+  "protocol_handlers": [
+    {
+      "protocol": "web+highleveragehumans",
+      "url": "/?protocol=%s"
+    }
+  ]
+}

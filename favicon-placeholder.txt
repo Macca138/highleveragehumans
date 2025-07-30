@@ -1,0 +1,24 @@
+# Favicon.ico Placeholder for High Leverage Humans
+
+This file serves as a placeholder for the actual favicon.ico file.
+
+To create the actual favicon.ico:
+1. Design a premium icon representing "High Leverage Humans"
+2. Use tools like Adobe Illustrator, Photoshop, or online favicon generators
+3. Create multi-size ICO file (16x16, 32x32, 48x48)
+4. Replace this placeholder with the actual binary ICO file
+
+The favicon should represent:
+- Premium/luxury positioning
+- Trading/financial elements
+- Growth/leverage concepts
+- Professional appearance
+- High contrast for small sizes
+
+Recommended design elements:
+- HLH monogram
+- Upward arrow/leverage symbol
+- Professional color scheme (#1a1a1a primary)
+- Clean, modern aesthetic
+
+Once created, rename the ICO file to "favicon.ico" and place in the root directory.

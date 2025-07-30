@@ -1,0 +1,73 @@
+{
+  "name": "highleveragehumans",
+  "version": "1.0.0",
+  "description": "High Leverage Humans - Premium Domain Flip Project",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:clean && vite build",
+    "build:clean": "rimraf dist",
+    "dev": "vite",
+    "preview": "vite preview",
+    "firebase:serve": "firebase emulators:start",
+    "firebase:deploy": "firebase deploy",
+    "firebase:deploy:hosting": "firebase deploy --only hosting",
+    "firebase:deploy:functions": "firebase deploy --only functions",
+    "firebase:deploy:staging": "firebase use staging && firebase deploy",
+    "firebase:deploy:prod": "firebase use default && firebase deploy",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint . --ext js,jsx,ts,tsx --fix",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,css,md}\"",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [
+    "domain-flip",
+    "premium-domain",
+    "business",
+    "investment",
+    "web-development"
+  ],
+  "author": "High Leverage Humans",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "firebase-tools": "^13.0.0",
+    "postcss": "^8.4.32",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.8",
+    "vitest": "^1.1.0"
+  },
+  "dependencies": {
+    "firebase": "^10.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

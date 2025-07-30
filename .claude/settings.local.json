@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:aura.build)",
+      "Bash(mkdir:*)",
+      "Bash(firebase serve:*)",
+      "Bash(firebase hosting:channel:deploy:*)",
+      "Bash(nslookup:*)",
+      "Bash(ipconfig /flushdns)",
+      "Bash(ipconfig.exe:*)",
+      "Bash(firebase hosting:sites:list:*)",
+      "WebFetch(domain:dnschecker.org)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": []
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "projects": {
+    "default": "highleveragehumans-a9ee3",
+    "staging": "highleveragehumans-staging",
+    "development": "highleveragehumans-dev",
+    "Main": "highleveragehumans-a9ee3"
+  },
+  "targets": {
+    "highleveragehumans-prod": {
+      "hosting": {
+        "main": [
+          "highleveragehumans-prod"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}

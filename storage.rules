@@ -1,0 +1,36 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Public assets - read-only for all users
+    match /public/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null 
+        && request.auth.token.admin == true;
+    }
+    
+    // User uploads - users can only access their own files
+    match /users/{userId}/{allPaths=**} {
+      allow read, write: if request.auth != null 
+        && request.auth.uid == userId;
+    }
+    
+    // Admin uploads - only for authenticated admin users
+    match /admin/{allPaths=**} {
+      allow read, write: if request.auth != null 
+        && request.auth.token.admin == true;
+    }
+    
+    // Temporary uploads - short-lived access for specific operations
+    match /temp/{uploadId} {
+      allow write: if request.auth != null
+        && resource == null
+        && request.resource.size < 10 * 1024 * 1024; // 10MB limit
+      allow read: if request.auth != null;
+    }
+    
+    // Default deny all other paths
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}

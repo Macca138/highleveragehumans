@@ -1,0 +1,246 @@
+# High Leverage Humans - Premium Domain Server Optimization
+# Enterprise-grade performance and security configuration
+
+# ==============================================================================
+# SECURITY HEADERS - Financial Grade Protection
+# ==============================================================================
+
+<IfModule mod_headers.c>
+    # Content Security Policy - Strict security for financial applications
+    Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net https://unpkg.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://api.highleveragehumans.com https://analytics.google.com; media-src 'self'; object-src 'none'; frame-src 'self' https://www.youtube.com https://tradingview.com; base-uri 'self'; form-action 'self'; frame-ancestors 'none';"
+    
+    # HTTP Strict Transport Security - Force HTTPS for premium security
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    
+    # X-Frame-Options - Prevent clickjacking attacks
+    Header always set X-Frame-Options "DENY"
+    
+    # X-Content-Type-Options - Prevent MIME type sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    
+    # X-XSS-Protection - Enable XSS filtering
+    Header always set X-XSS-Protection "1; mode=block"
+    
+    # Referrer Policy - Control referrer information
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy - Control browser features
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=(self), usb=(), magnetometer=(), gyroscope=(), accelerometer=()"
+    
+    # Feature Policy fallback for older browsers
+    Header always set Feature-Policy "geolocation 'none'; microphone 'none'; camera 'none'; payment 'self'; usb 'none'; magnetometer 'none'; gyroscope 'none'; accelerometer 'none'"
+    
+    # X-Permitted-Cross-Domain-Policies - Restrict cross-domain access
+    Header always set X-Permitted-Cross-Domain-Policies "none"
+    
+    # Cross-Origin-Embedder-Policy - Enhanced security isolation
+    Header always set Cross-Origin-Embedder-Policy "require-corp"
+    
+    # Cross-Origin-Opener-Policy - Prevent cross-origin attacks
+    Header always set Cross-Origin-Opener-Policy "same-origin"
+    
+    # Cross-Origin-Resource-Policy - Control resource sharing
+    Header always set Cross-Origin-Resource-Policy "same-site"
+</IfModule>
+
+# ==============================================================================
+# PERFORMANCE OPTIMIZATION - Premium Domain Speed
+# ==============================================================================
+
+# Enable compression for better performance
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE application/ld+json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE font/truetype
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+</IfModule>
+
+# Browser caching for optimal performance
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Images - Long cache for premium visual content
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Web fonts - Premium typography caching
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # CSS and JavaScript - Optimized for trading platform performance
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    
+    # HTML and data files
+    ExpiresByType text/html "access plus 1 hour"
+    ExpiresByType application/json "access plus 1 hour"
+    ExpiresByType application/xml "access plus 1 hour"
+    ExpiresByType text/xml "access plus 1 hour"
+    
+    # Media files
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+    ExpiresByType audio/mp3 "access plus 1 year"
+    ExpiresByType audio/wav "access plus 1 year"
+    
+    # Documents
+    ExpiresByType application/pdf "access plus 1 month"
+    ExpiresByType application/msword "access plus 1 month"
+    ExpiresByType application/vnd.ms-excel "access plus 1 month"
+</IfModule>
+
+# Cache control headers for premium performance
+<IfModule mod_headers.c>
+    # Static assets - Aggressive caching for premium speed
+    <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|avif|js|css|swf|woff|woff2|ttf|otf|eot|svg)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    
+    # HTML files - Short cache for dynamic content
+    <FilesMatch "\.(html|htm)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+    
+    # JSON and XML - API and data caching
+    <FilesMatch "\.(json|xml)$">
+        Header set Cache-Control "public, max-age=3600"
+    </FilesMatch>
+</IfModule>
+
+# ==============================================================================
+# SEO OPTIMIZATION - Premium Domain Signals
+# ==============================================================================
+
+# Force HTTPS for premium domain authority
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    
+    # Redirect HTTP to HTTPS
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+    
+    # Redirect www to non-www for canonical URLs
+    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+    
+    # Remove trailing slashes for clean URLs
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [R=301,L]
+</IfModule>
+
+# ==============================================================================
+# PREMIUM DOMAIN ROUTES - High-Value Content Optimization
+# ==============================================================================
+
+<IfModule mod_rewrite.c>
+    # Trading routes - High-value SEO paths
+    RewriteRule ^trading/?$ /index.html?section=trading [L,QSA]
+    RewriteRule ^trading/100x/?$ /index.html?section=trading&subsection=100x [L,QSA]
+    RewriteRule ^trading/strategies/?$ /index.html?section=trading&subsection=strategies [L,QSA]
+    
+    # Startup routes - Premium business content
+    RewriteRule ^startups/?$ /index.html?section=startups [L,QSA]
+    RewriteRule ^startups/scaling/?$ /index.html?section=startups&subsection=scaling [L,QSA]
+    RewriteRule ^startups/funding/?$ /index.html?section=startups&subsection=funding [L,QSA]
+    
+    # Leverage routes - Core value proposition
+    RewriteRule ^leverage/?$ /index.html?section=leverage [L,QSA]
+    RewriteRule ^leverage/business/?$ /index.html?section=leverage&subsection=business [L,QSA]
+    RewriteRule ^leverage/personal/?$ /index.html?section=leverage&subsection=personal [L,QSA]
+    
+    # Tools and resources
+    RewriteRule ^tools/?$ /index.html?section=tools [L,QSA]
+    RewriteRule ^resources/?$ /index.html?section=resources [L,QSA]
+    RewriteRule ^community/?$ /index.html?section=community [L,QSA]
+    RewriteRule ^blog/?$ /index.html?section=blog [L,QSA]
+    
+    # Legal and info pages
+    RewriteRule ^about/?$ /index.html?section=about [L,QSA]
+    RewriteRule ^contact/?$ /index.html?section=contact [L,QSA]
+    RewriteRule ^privacy/?$ /index.html?section=privacy [L,QSA]
+    RewriteRule ^terms/?$ /index.html?section=terms [L,QSA]
+</IfModule>
+
+# ==============================================================================
+# MIME TYPES - Modern Web Standards
+# ==============================================================================
+
+<IfModule mod_mime.c>
+    # Web fonts
+    AddType font/woff .woff
+    AddType font/woff2 .woff2
+    AddType application/font-woff .woff
+    AddType application/font-woff2 .woff2
+    
+    # Modern image formats
+    AddType image/webp .webp
+    AddType image/avif .avif
+    
+    # Web app manifest
+    AddType application/manifest+json .webmanifest
+    AddType application/json .json
+    
+    # Security files
+    AddType text/plain .txt
+</IfModule>
+
+# ==============================================================================
+# ERROR PAGES - Premium User Experience
+# ==============================================================================
+
+ErrorDocument 404 /index.html?error=404
+ErrorDocument 403 /index.html?error=403
+ErrorDocument 500 /index.html?error=500
+ErrorDocument 503 /index.html?error=503
+
+# ==============================================================================
+# FILE ACCESS PROTECTION - Security for Premium Domain
+# ==============================================================================
+
+# Protect sensitive files
+<FilesMatch "(^#.*#|\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|sw[op])|~)$">
+    Require all denied
+</FilesMatch>
+
+# Protect .htaccess and other Apache files
+<FilesMatch "^\.ht">
+    Require all denied
+</FilesMatch>
+
+# Protect Node.js files
+<FilesMatch "(package\.json|yarn\.lock|\.env)$">
+    Require all denied
+</FilesMatch>
+
+# Allow access to humans.txt and security.txt
+<FilesMatch "(humans\.txt|security\.txt)$">
+    Require all granted
+</FilesMatch>
+
+# ==============================================================================
+# PREMIUM DOMAIN OPTIMIZATION COMPLETE
+# High Leverage Humans - Maximum Performance & Security
+# ==============================================================================
