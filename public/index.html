@@ -134,7 +134,36 @@
         .logo {
             width: 120px;
             height: auto;
+            object-fit: contain;
+            max-width: 100%;
+        }
+        
+        .hero-logo {
+            width: 300px;
+            height: auto;
+            object-fit: contain;
+            max-width: 100%;
             margin-bottom: 2rem;
+        }
+        
+        .footer-logo {
+            width: 100px;
+            height: auto;
+            object-fit: contain;
+            max-width: 100%;
+        }
+        
+        /* Responsive logo sizing */
+        @media (max-width: 768px) {
+            .hero-logo {
+                width: 200px;
+            }
+            .logo {
+                width: 100px;
+            }
+            .footer-logo {
+                width: 80px;
+            }
         }
         
         /* Loading animation */
@@ -207,7 +236,7 @@
         <nav class="nav-container" role="navigation" aria-label="Main navigation">
             <div class="nav-brand">
                 <a href="/" aria-label="High Leverage Humans - Home">
-                    <img src="/assets/images/HLH_wide_logo.png" alt="High Leverage Humans Logo" class="logo" width="120" height="60">
+                    <img src="/assets/images/HLH_wide_logo.png" alt="High Leverage Humans Logo" class="logo">
                 </a>
             </div>
             <div class="nav-menu">
@@ -230,7 +259,7 @@
         <!-- Hero Section -->
         <section class="hero" id="hero" role="banner">
             <div class="hero-content">
-                <img src="/assets/images/HLH_square_logo.png" alt="High Leverage Humans" class="hero-logo" width="200" height="200">
+                <img src="/assets/images/HLH_square_logo.png" alt="High Leverage Humans" class="hero-logo">
                 <h1>Welcome to the Tribe of High Leverage Humans</h1>
                 <p class="tagline">We live at 100x.</p>
                 <p class="hero-description">
@@ -416,7 +445,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="/assets/images/HLH_square_logo.png" alt="High Leverage Humans" class="footer-logo" width="80" height="80">
+                    <img src="/assets/images/HLH_square_logo.png" alt="High Leverage Humans" class="footer-logo">
                     <p class="footer-tagline">Living at 100x</p>
                 </div>
                 
