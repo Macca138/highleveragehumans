@@ -1,0 +1,297 @@
+/**
+ * High Leverage Humans - Grid System Overhaul
+ * Fixes the catastrophic 3+1 grid layouts with balanced, professional systems
+ */
+
+/* PREMIUM GRID SYSTEM - NO MORE 3+1 DISASTERS */
+
+/* Value Proposition Section - Balanced 2x2 Grid */
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.value-item {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(17, 17, 17, 0.9) 100%);
+    border: 1px solid rgba(0, 230, 255, 0.15);
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    backdrop-filter: blur(20px);
+    position: relative;
+    overflow: hidden;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.value-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent 0%, var(--color-neon-blue) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.value-item:hover::before {
+    opacity: 1;
+}
+
+.value-item:hover {
+    transform: translateY(-12px);
+    border-color: rgba(0, 230, 255, 0.4);
+    box-shadow: 
+        0 25px 50px rgba(0, 230, 255, 0.2),
+        0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Features Section - Balanced 2x2 Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: clamp(2.5rem, 4vw, 4rem);
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.feature-card {
+    background: linear-gradient(135deg, rgba(26, 26, 26, 0.95) 0%, rgba(17, 17, 17, 0.9) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 3.5rem 3rem;
+    text-align: center;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(25px);
+    min-height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 230, 255, 0.03) 0%, rgba(255, 0, 79, 0.03) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    border-color: rgba(0, 230, 255, 0.3);
+    box-shadow: 
+        0 30px 60px rgba(0, 230, 255, 0.25),
+        0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Special styling for featured card */
+.feature-card.featured {
+    border-color: rgba(255, 0, 79, 0.3);
+    background: linear-gradient(135deg, rgba(255, 0, 79, 0.08) 0%, rgba(26, 26, 26, 0.95) 100%);
+}
+
+.feature-card.featured:hover {
+    border-color: rgba(255, 0, 79, 0.5);
+    box-shadow: 
+        0 30px 60px rgba(255, 0, 79, 0.25),
+        0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Enhanced Card Content Styling */
+.value-icon,
+.feature-icon {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    display: block;
+    filter: drop-shadow(0 5px 15px rgba(0, 230, 255, 0.3));
+}
+
+.value-item h3,
+.feature-card h3 {
+    font-family: var(--font-primary);
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--color-white);
+    margin: 0 0 1.5rem 0;
+    line-height: 1.2;
+}
+
+.value-item p,
+.feature-card p {
+    font-family: var(--font-secondary);
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    line-height: 1.7;
+    color: var(--color-gray-300);
+    margin: 0 0 2rem 0;
+    flex-grow: 1;
+}
+
+.feature-status {
+    font-family: var(--font-secondary);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-neon-blue);
+    padding: 0.8rem 1.5rem;
+    background: rgba(0, 230, 255, 0.12);
+    border: 2px solid rgba(0, 230, 255, 0.3);
+    border-radius: 8px;
+    display: inline-block;
+    backdrop-filter: blur(10px);
+    margin-top: auto;
+}
+
+.feature-card.featured .feature-status {
+    color: var(--color-electric-red);
+    background: rgba(255, 0, 79, 0.12);
+    border-color: rgba(255, 0, 79, 0.3);
+}
+
+/* Responsive Grid System */
+@media (max-width: 1024px) {
+    .value-grid,
+    .features-grid {
+        gap: clamp(1.5rem, 3vw, 2.5rem);
+        padding: 0 1.5rem;
+    }
+    
+    .value-item,
+    .feature-card {
+        padding: 2.5rem 2rem;
+        min-height: 240px;
+    }
+}
+
+@media (max-width: 768px) {
+    .value-grid,
+    .features-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 2rem;
+        padding: 0 1rem;
+    }
+    
+    .value-item,
+    .feature-card {
+        padding: 2rem 1.5rem;
+        min-height: 200px;
+    }
+    
+    .value-icon,
+    .feature-icon {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .value-item,
+    .feature-card {
+        padding: 1.5rem 1rem;
+        border-radius: 16px;
+    }
+    
+    .value-icon,
+    .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+/* Premium Animation Enhancements */
+.value-item,
+.feature-card {
+    animation: slideInFade 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.value-item:nth-child(1) { animation-delay: 0.1s; }
+.value-item:nth-child(2) { animation-delay: 0.2s; }
+.value-item:nth-child(3) { animation-delay: 0.3s; }
+.value-item:nth-child(4) { animation-delay: 0.4s; }
+
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+.feature-card:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes slideInFade {
+    0% {
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Premium Hover Effects */
+.feature-card:hover .feature-icon,
+.value-item:hover .value-icon {
+    animation: iconFloat 0.8s ease-in-out;
+    transform: scale(1.1);
+}
+
+@keyframes iconFloat {
+    0%, 100% { transform: scale(1.1) translateY(0); }
+    50% { transform: scale(1.15) translateY(-8px); }
+}
+
+/* Performance Optimizations */
+.value-item,
+.feature-card {
+    will-change: transform;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    .value-item,
+    .feature-card {
+        animation: none;
+        opacity: 1;
+        transition: none;
+    }
+    
+    .value-item:hover,
+    .feature-card:hover {
+        transform: none;
+    }
+}
+
+/* Focus States for Accessibility */
+.value-item:focus-within,
+.feature-card:focus-within {
+    outline: 2px solid var(--color-neon-blue);
+    outline-offset: 4px;
+}
