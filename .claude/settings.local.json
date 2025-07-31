@@ -22,7 +22,13 @@
       "Bash(rm:*)",
       "Bash(mv:*)",
       "Bash(git push:*)",
-      "Bash(firebase deploy:*)"
+      "Bash(firebase deploy:*)",
+      "mcp__playwright__playwright_navigate",
+      "mcp__playwright__playwright_screenshot",
+      "mcp__playwright__playwright_hover",
+      "mcp__playwright__playwright_evaluate",
+      "mcp__playwright__playwright_click",
+      "mcp__playwright__playwright_close"
     ],
     "deny": []
   }

@@ -66,21 +66,20 @@
     }
 }
 
-/* Typing Animation for Hero Text */
+/* Enhanced Hero Text Animation - FIXED TRUNCATION */
 .hero h1 {
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typeWriter 3s steps(30) 1s both;
+    opacity: 0;
+    animation: heroTextReveal 1.5s ease-out 1s both;
 }
 
-@keyframes typeWriter {
+@keyframes heroTextReveal {
     0% { 
-        width: 0;
-        white-space: nowrap;
+        opacity: 0;
+        transform: translateY(30px) scale(0.95);
     }
     100% { 
-        width: 100%;
-        white-space: normal;
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
