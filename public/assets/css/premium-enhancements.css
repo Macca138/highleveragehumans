@@ -1,0 +1,305 @@
+/**
+ * High Leverage Humans - Premium Visual Enhancements
+ * Adds subtle animations, particle effects, and premium touches
+ */
+
+/* Animated Background Effects */
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.hero-background::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 25% 25%, var(--color-neon-blue) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, var(--color-electric-red) 0%, transparent 50%);
+    animation: floatingOrbs 20s ease-in-out infinite;
+    opacity: 0.3;
+}
+
+@keyframes floatingOrbs {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(-20px, -20px) rotate(120deg); }
+    66% { transform: translate(20px, -10px) rotate(240deg); }
+}
+
+/* Grid Pattern Overlay */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 230, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 230, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+/* Enhanced Glow Effects */
+.hero-logo {
+    animation: subtleGlow 4s ease-in-out infinite;
+}
+
+@keyframes subtleGlow {
+    0%, 100% { 
+        filter: drop-shadow(0 10px 30px rgba(0, 230, 255, 0.3));
+        transform: scale(1);
+    }
+    50% { 
+        filter: drop-shadow(0 15px 40px rgba(0, 230, 255, 0.5));
+        transform: scale(1.02);
+    }
+}
+
+/* Typing Animation for Hero Text */
+.hero h1 {
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typeWriter 3s steps(30) 1s both;
+}
+
+@keyframes typeWriter {
+    0% { 
+        width: 0;
+        white-space: nowrap;
+    }
+    100% { 
+        width: 100%;
+        white-space: normal;
+    }
+}
+
+.hero .tagline {
+    opacity: 0;
+    animation: fadeInUp 1s ease 4s both;
+}
+
+.hero .hero-description {
+    opacity: 0;
+    animation: fadeInUp 1s ease 4.5s both;
+}
+
+.cta-button {
+    opacity: 0;
+    animation: fadeInUp 1s ease 5s both;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger Animation for Value Items */
+.value-item:nth-child(1) { animation: slideInLeft 0.6s ease 0.2s both; }
+.value-item:nth-child(2) { animation: slideInLeft 0.6s ease 0.4s both; }
+.value-item:nth-child(3) { animation: slideInLeft 0.6s ease 0.6s both; }
+.value-item:nth-child(4) { animation: slideInLeft 0.6s ease 0.8s both; }
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Stagger Animation for Feature Cards */
+.feature-card:nth-child(1) { animation: slideInUp 0.6s ease 0.2s both; }
+.feature-card:nth-child(2) { animation: slideInUp 0.6s ease 0.4s both; }
+.feature-card:nth-child(3) { animation: slideInUp 0.6s ease 0.6s both; }
+.feature-card:nth-child(4) { animation: slideInUp 0.6s ease 0.8s both; }
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enhanced Hover Effects */
+.feature-card:hover .feature-icon {
+    animation: bounceIcon 0.6s ease;
+}
+
+@keyframes bounceIcon {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.1) rotate(-5deg); }
+    75% { transform: scale(1.05) rotate(5deg); }
+}
+
+/* Magnetic Effect for CTA Button */
+.cta-button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+
+.cta-button::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--color-neon-blue), var(--color-electric-red), var(--color-neon-blue));
+    border-radius: 10px;
+    z-index: -1;
+    animation: borderGlow 3s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cta-button:hover::after {
+    opacity: 0.7;
+}
+
+@keyframes borderGlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Parallax Scrolling Effect */
+.value-proposition {
+    background-attachment: fixed;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(0, 230, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 0, 79, 0.05) 0%, transparent 50%);
+}
+
+/* Premium Cursor Effects */
+.cta-button:hover,
+.feature-card:hover,
+.value-item:hover {
+    cursor: pointer;
+}
+
+/* Smooth Section Transitions */
+.value-proposition,
+.features,
+.early-access {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: sectionFadeIn 1s ease forwards;
+}
+
+.value-proposition { animation-delay: 0.2s; }
+.features { animation-delay: 0.4s; }
+.early-access { animation-delay: 0.6s; }
+
+@keyframes sectionFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading States */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--color-charcoal);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.loading-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.loading-spinner {
+    width: 60px;
+    height: 60px;
+    border: 3px solid rgba(0, 230, 255, 0.1);
+    border-top: 3px solid var(--color-neon-blue);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Reduce Motion for Users with Accessibility Preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero-background::before {
+        animation: none;
+    }
+    
+    .hero-logo {
+        animation: none;
+    }
+}
+
+/* High Performance Animations */
+.hero-content,
+.value-item,
+.feature-card {
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .hero h1 {
+        animation: none;
+        white-space: normal;
+    }
+    
+    .hero-background::before {
+        animation-duration: 30s;
+    }
+    
+    /* Reduce motion on mobile to save battery */
+    .value-item,
+    .feature-card {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
